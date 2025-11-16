@@ -42,7 +42,7 @@ export function useLogin() {
           });
 
           await delay(500);
-          router.push(ROUTES.HOME);
+          router.push(ROUTES.SERENITY_SPACE);
         } else {
           setError("Identifiant ou clé d’accès incorrect, réessayez !");
         }
