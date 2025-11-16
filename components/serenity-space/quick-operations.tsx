@@ -49,13 +49,15 @@ export function QuickOperations() {
           className="w-full lg:h-10 grow overflow-auto max-w-md mx-auto"
         >
           <TabsList className="w-auto">
-            <TabsTrigger value="envoi" disabled>
+            <TabsTrigger value="envoi" disabled className="text-[11px]">
               Envoi d&apos;argent
             </TabsTrigger>
-            <TabsTrigger value="lien" disabled>
+            <TabsTrigger value="lien" disabled className="text-[11px]">
               Lien de paiement
             </TabsTrigger>
-            <TabsTrigger value="rechargement">Rechargement</TabsTrigger>
+            <TabsTrigger value="rechargement" className="text-[11px]">
+              Rechargement
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="rechargement" className="pt-2 scrollbar-hide">

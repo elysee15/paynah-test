@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { useDynamicHeight } from "@/lib/hooks/use-dynamic-height";
 import { ScrollArea } from "../ui/scroll-area";
+import CircleStar from "../icons/circle-star";
 
 type PointOfSale = {
   id: string;
@@ -146,6 +147,11 @@ function PointOfSaleIcon({
       )}
     >
       <IconComponent className="2xl:size-6 size-4 text-black" />
+      {isDefault && (
+        <span className="text-[11px] absolute bottom-0 right-0">
+          <CircleStar className="size-3" />
+        </span>
+      )}
     </div>
   );
 }
