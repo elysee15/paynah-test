@@ -21,6 +21,13 @@ import LockIcon from "../icons/lock";
 function LoginForm() {
   const { form, onSubmit, error } = useLogin();
 
+  const description = (
+    <p className="text-xs text-muted-foreground leading-normal">
+      Identifiant : <span className="font-bold">admin@paynah.com</span> /{" "}
+      <span className="font-bold">paynah123</span>
+    </p>
+  );
+
   return (
     <Card
       className={cn(
@@ -31,8 +38,10 @@ function LoginForm() {
       <CardContent>
         <div className="flex items-center justify-center mb-3 gap-1 flex-col">
           <LockIcon className={cn("size-6", error && "text-destructive")} />
-          {error && (
+          {error ? (
             <p className="text-xs text-center text-destructive">{error}</p>
+          ) : (
+            description
           )}
         </div>
         <Form {...form}>
