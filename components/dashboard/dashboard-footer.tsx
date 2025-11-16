@@ -36,7 +36,7 @@ export function DashboardFooter({ menuItems }: DashboardFooterProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute -left-4 z-10 h-8 w-8 rounded-full bg-white shadow-md hover:bg-gray-100"
+            className="absolute -left-4 z-10 h-8 w-8 rounded-full bg-white dark:bg-black/80 shadow-md hover:bg-gray-100"
             onClick={scrollLeft}
             aria-label="Scroll left"
           >
@@ -74,7 +74,7 @@ export function DashboardFooter({ menuItems }: DashboardFooterProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute -right-4 z-10 h-8 w-8 rounded-full bg-white shadow-md hover:bg-gray-100"
+            className="absolute -right-4 z-10 h-8 w-8 rounded-full bg-white dark:bg-black/80 shadow-md hover:bg-gray-100"
             onClick={scrollRight}
             aria-label="Scroll right"
           >
