@@ -2,8 +2,8 @@
 
 import { Link, CreditCard, Globe, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
-import { useDynamicHeight } from "@/lib/hooks/use-dynamic-height";
+import { cn } from "@/libs/utils";
+import { useDynamicHeight } from "@/libs/hooks/use-dynamic-height";
 import { ScrollArea } from "../ui/scroll-area";
 import CircleStar from "../icons/circle-star";
 
@@ -125,15 +125,15 @@ function PointOfSaleIcon({
   const iconConfig = {
     link: {
       component: Link,
-      bgColor: "bg-[#FFE5D9]",
+      bgColor: "bg-[#FFC5AF]",
     },
     terminal: {
       component: CreditCard,
-      bgColor: "bg-[#E8D5FF]",
+      bgColor: "bg-[#E3BBFF]",
     },
     globe: {
       component: Globe,
-      bgColor: "bg-[#FFF4CC]",
+      bgColor: "bg-[#FFE29C]",
     },
   };
 

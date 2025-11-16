@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
+
 import Providers from "./providers";
+import { getBaseUrl } from "@/utils/helpers";
+import { AppConfig } from "@/utils/app-config";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -10,9 +13,12 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Paynah PRO",
-  description:
-    "Votre solution de paynah en Côte d'Ivoire et dans la sous région.",
+  metadataBase: new URL(getBaseUrl()),
+  title: {
+    default: AppConfig.name,
+    template: `%s | ${AppConfig.name}`,
+  },
+  description: AppConfig.description,
   icons: {
     icon: "/icons/mini-logo.svg",
   },
@@ -23,9 +29,9 @@ export const metadata: Metadata = {
     images: "/icons/mini-logo.svg",
   },
   keywords: ["paynah", "paynah pro"],
-  authors: [{ name: "Paynah", url: "https://paynah.com" }],
-  creator: "Paynah",
-  publisher: "Paynah",
+  authors: [{ name: AppConfig.name, url: getBaseUrl() }],
+  creator: AppConfig.name,
+  publisher: AppConfig.name,
   formatDetection: {
     email: false,
     address: false,

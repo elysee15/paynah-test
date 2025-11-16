@@ -1,7 +1,7 @@
 "use client";
 
 import { Wallet, MoreVertical } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/libs/utils";
 
 interface MetricCardProps {
   title: string;

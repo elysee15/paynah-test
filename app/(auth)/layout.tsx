@@ -2,7 +2,7 @@
 
 import Logo from "@/components/misc/logo";
 import { LanguageSelector } from "@/components/misc/language-selector";
-import { ROUTES } from "@/lib/constants/routes";
+import { ROUTES } from "@/libs/constants/routes";
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeSwitcher } from "@/components/ui/theme-switcher";

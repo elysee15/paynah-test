@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { cn } from "@/lib/utils";
+import { cn } from "@/libs/utils";
 
 type Language = {
   code: string;

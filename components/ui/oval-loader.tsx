@@ -1,6 +1,6 @@
 import React from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/libs/utils";
 
 function OvalLoader({ className, ...props }: React.SVGProps<SVGSVGElement>) {
   return (
