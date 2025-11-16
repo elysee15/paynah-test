@@ -10,8 +10,26 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Paynah",
-  description: "Paynah is a platform for managing your finances",
+  title: "Paynah PRO",
+  description:
+    "Votre solution de paynah en Côte d'Ivoire et dans la sous région.",
+  icons: {
+    icon: "/icons/mini-logo.svg",
+  },
+  openGraph: {
+    images: "/icons/mini-logo.svg",
+  },
+  twitter: {
+    images: "/icons/mini-logo.svg",
+  },
+  keywords: ["paynah", "paynah pro"],
+  authors: [{ name: "Paynah", url: "https://paynah.com" }],
+  creator: "Paynah",
+  publisher: "Paynah",
+  formatDetection: {
+    email: false,
+    address: false,
+  },
 };
 
 export default function RootLayout({
