@@ -55,19 +55,15 @@ export function useScrollIndicator(
     const element = scrollRef.current;
     if (!element) return;
 
-    // Initial check - deferred to avoid synchronous setState
     const initialCheck = requestAnimationFrame(() => {
       checkScrollability();
     });
 
-    // Check on scroll
     element.addEventListener("scroll", checkScrollability);
 
-    // Check on resize
     const resizeObserver = new ResizeObserver(checkScrollability);
     resizeObserver.observe(element);
 
-    // Check when window resizes
     window.addEventListener("resize", checkScrollability);
 
     return () => {

@@ -14,7 +14,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { ROUTES } from "@/lib/constants/routes";
+import { ROUTES } from "@/libs/constants/routes";
 
 const formSchema = z
   .object({
@@ -63,13 +63,14 @@ function RegisterForm() {
         toast.success("Inscription réussie!", {
           description: "Redirection en cours...",
         });
-        
+
         // Simulate redirect delay
         await new Promise((resolve) => setTimeout(resolve, 500));
         router.push(ROUTES.HOME);
       } else {
         toast.error("Inscription échouée", {
-          description: "Utilisez 'admin' comme email et mot de passe pour tester.",
+          description:
+            "Utilisez 'admin' comme email et mot de passe pour tester.",
         });
       }
     } catch (error) {

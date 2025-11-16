@@ -20,10 +20,9 @@ type FormValues = z.infer<typeof formSchema>;
 
 type ConcernsFormProps = {
   onSubmit?: (values: FormValues) => void | Promise<void>;
-  onSuccess?: () => void;
 };
 
-export function ConcernsForm({ onSubmit, onSuccess }: ConcernsFormProps) {
+export function ConcernsForm({ onSubmit }: ConcernsFormProps) {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,6 +32,8 @@ export function ConcernsForm({ onSubmit, onSuccess }: ConcernsFormProps) {
 
   const handleSubmit = async (values: FormValues) => {
     // TODO: add submit logic
+    console.log(values);
+    onSubmit?.(values);
   };
 
   return (
@@ -60,9 +61,6 @@ export function ConcernsForm({ onSubmit, onSuccess }: ConcernsFormProps) {
                         {...field}
                       />
                     </FormControl>
-                    <FieldError
-                      errors={fieldState.error ? [fieldState.error] : []}
-                    />
                   </FieldContent>
                 </Field>
               )}
@@ -72,7 +70,8 @@ export function ConcernsForm({ onSubmit, onSuccess }: ConcernsFormProps) {
               variant="ghost"
               size="icon"
               className="absolute right-1 top-1/2 -translate-y-1/2 text-[#767676] h-8 w-8 hover:bg-transparent"
-              disabled={form.formState.isSubmitting}
+              disabled={form.formState.isSubmitting || !form.formState.isValid}
+              isLoading={form.formState.isSubmitting}
             >
               <Send className="size-4" />
             </Button>

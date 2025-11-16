@@ -3,8 +3,8 @@
 import { useState, useMemo, RefObject } from "react";
 import { Send, ChevronRight, MoreVertical } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
-import { useDynamicHeight } from "@/lib/hooks/use-dynamic-height";
+import { cn } from "@/libs/utils";
+import { useDynamicHeight } from "@/libs/hooks/use-dynamic-height";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "../ui/datatable";

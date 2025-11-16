@@ -1,5 +1,5 @@
 import LoginForm from "@/components/auth/login-form";
-import { ROUTES } from "@/lib/constants/routes";
+import { ROUTES } from "@/libs/constants/routes";
 import Link from "next/link";
 
 function LoginPage() {

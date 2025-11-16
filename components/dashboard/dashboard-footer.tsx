@@ -11,8 +11,8 @@ import {
 } from "@/components/ui/tooltip";
 import { NavLink } from "@/components/ui/nav-link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { getInitials } from "@/lib/utils";
-import { useScrollIndicator } from "@/lib/hooks/use-scroll-indicator";
+import { getInitials } from "@/libs/utils";
+import { useScrollIndicator } from "@/libs/hooks/use-scroll-indicator";
 
 type MenuItem = {
   label: string;

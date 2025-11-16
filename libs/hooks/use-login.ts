@@ -2,9 +2,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { delay } from "../utils";
 import { useCallback, useState } from "react";
-import { toast } from "sonner";
 import { ROUTES } from "../constants/routes";
 
 const formSchema = z.object({
@@ -31,26 +29,31 @@ export function useLogin() {
       try {
         setError(null);
 
-        await delay(1000);
+        const response = await fetch("/api/auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            identifier: values.identifier,
+            accessKey: values.accessKey,
+          }),
+        });
 
-        if (
-          values.identifier === "admin@paynah.com" &&
-          values.accessKey === "paynah123"
-        ) {
-          toast.success("Connexion réussie!", {
-            description: "Redirection en cours...",
-          });
+        const data = await response.json();
 
-          await delay(500);
+        if (response.ok && data.success) {
           router.push(ROUTES.SERENITY_SPACE);
         } else {
-          setError("Identifiant ou clé d’accès incorrect, réessayez !");
+          setError(
+            data.error || "Identifiant ou clé d'accès incorrect, réessayez !"
+          );
         }
-      } catch (error) {
+      } catch {
         setError("Une erreur est survenue. Veuillez réessayer.");
       }
     },
-    [router, form]
+    [router]
   );
 
   return { form, onSubmit, error };

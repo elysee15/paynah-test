@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { useDynamicHeight } from "@/lib/hooks/use-dynamic-height";
+import { useDynamicHeight } from "@/libs/hooks/use-dynamic-height";
 import { RechargementForm } from "./rechargement-form";
 
 const COUNTRIES = [

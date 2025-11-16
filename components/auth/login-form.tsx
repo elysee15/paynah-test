@@ -11,11 +11,11 @@ import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ROUTES } from "@/lib/constants/routes";
+import { ROUTES } from "@/libs/constants/routes";
 import OvalLoader from "../ui/oval-loader";
 import { Card, CardContent } from "../ui/card";
-import { useLogin } from "@/lib/hooks/use-login";
-import { cn } from "@/lib/utils";
+import { useLogin } from "@/libs/hooks/use-login";
+import { cn } from "@/libs/utils";
 import LockIcon from "../icons/lock";
 
 function LoginForm() {

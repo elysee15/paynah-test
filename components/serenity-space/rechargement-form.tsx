@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/field";
 import { Smartphone, Building2, Building, LucideIcon } from "lucide-react";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn } from "@/libs/utils";
 
 type TransactionMethod = "mobile-money" | "virement" | "versement";
 

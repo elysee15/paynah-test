@@ -36,7 +36,7 @@ function BankCard() {
             </div>
             <div>
               <Select defaultValue="xof">
-                <SelectTrigger className="bg-[#2E2E2E] rounded-[14px] border-none text-white hover:bg-gray-800/70 py-0 h-6! px-2 text-xs">
+                <SelectTrigger className="bg-[#2E2E2E] rounded-[14px] border-none text-white py-0 h-6! px-2 text-[11px]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
